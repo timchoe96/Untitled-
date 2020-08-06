@@ -1,0 +1,123 @@
+$navColor: rgb(237, 237, 237);
+
+nav {
+  height: 25px;
+  cursor: default;
+  background-color: $navColor;
+  border-bottom: 1px solid rgb(225, 225, 225);
+  // box-shadow: 0 3px 50px -6px rgb(53, 53, 53);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  .leftNav {
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    div {
+      font-weight: 800;
+      font-size: 18px;
+      padding-right: 10px;
+      padding-left: 18px;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        padding: 0 8px;
+      }
+    }
+  }
+  .rightNav {
+    width: 14rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .battery {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 60px;
+    }
+    img {
+      height: 13px;
+      width: auto;
+    }
+  }
+  .menuToggle {
+    display: none;
+    cursor: pointer;
+  }
+}
+
+.dropdownNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 200;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $navColor;
+  text-align: center;
+  transition: top ease-out 0.5s;
+  ul {
+    list-style: none;
+    li {
+      margin: 50px 0 50px;
+    }
+  }
+  img {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    .leftNav {
+      display: none;
+    }
+    .rightNav {
+      width: 7rem;
+      .battery {
+        display: none;
+      }
+      img {
+        display: none;
+      }
+    }
+    .menuToggle {
+      display: block;
+      height: 14px;
+      width: auto;
+      padding-left: 18px;
+    }
+  }
+}
+
+@media only screen and (max-height: 450px) {
+  .dropdownNav {
+    ul {
+      li {
+        margin: 30px 0 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: 300px) {
+  .dropdownNav {
+    ul {
+      li {
+        margin: 20px 0 20px;
+      }
+    }
+  }
+}
