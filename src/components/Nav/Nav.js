@@ -7,6 +7,7 @@ import wifi from "./images/wifi.png";
 import menu from "./images/menu.png";
 import close from "./images/close.png";
 import { navToggle } from "../../actions/index.js";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -51,11 +52,23 @@ const Nav = () => {
           {/* <img src={apple} alt=""></img> */}
           <div>U</div>
           <ul>
-            <li>About</li>
-            <li>Journal</li>
+            <Link
+              to="/About"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <li>About</li>
+            </Link>
+            <Link
+              to="/Journal"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <li>Journal</li>
+            </Link>
             <li>Images</li>
             <li>Store</li>
-            <li>Home</li>
+            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <li>Home</li>
+            </Link>
           </ul>
         </div>
         {/* at ipad width menu toggle icon */}
@@ -77,11 +90,20 @@ const Nav = () => {
       </nav>
       <div className="dropdownNav" style={{ top: position }}>
         <ul>
-          <li>About</li>
-          <li>Journal</li>
+          <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
+            <li onClick={() => dispatch(navToggle("-1400px"))}>About</li>
+          </Link>
+          <Link
+            to="/Journal"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <li onClick={() => dispatch(navToggle("-1400px"))}>Journal</li>
+          </Link>
           <li>Images</li>
           <li>Store</li>
-          <li>Home</li>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <li onClick={() => dispatch(navToggle("-1400px"))}>Home</li>
+          </Link>
         </ul>
         <img
           alt=""

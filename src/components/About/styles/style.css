@@ -1,0 +1,18 @@
+.about {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 200;
+  text-align: center;
+  line-height: 2;
+  padding: 0 10%;
+}
+/*# sourceMappingURL=style.css.map */
