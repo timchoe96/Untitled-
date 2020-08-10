@@ -6,6 +6,7 @@ import battery from "./images/battery.png";
 import wifi from "./images/wifi.png";
 import menu from "./images/menu.png";
 import close from "./images/close.png";
+import favicon from "./images/favicon.png";
 import { navToggle } from "../../actions/index.js";
 import { Link } from "react-router-dom";
 
@@ -50,8 +51,11 @@ const Nav = () => {
       <nav>
         <div className="leftNav">
           {/* <img src={apple} alt=""></img> */}
-          <div>U</div>
+          <img src={favicon} alt=""></img>
           <ul>
+            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <li>Home</li>
+            </Link>
             <Link
               to="/About"
               style={{ textDecoration: "none", color: "black" }}
@@ -64,11 +68,13 @@ const Nav = () => {
             >
               <li>Journal</li>
             </Link>
-            <li>Images</li>
-            <li>Store</li>
-            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-              <li>Home</li>
+            <Link
+              to="/Images"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <li>Images</li>
             </Link>
+            <li>Store</li>
           </ul>
         </div>
         {/* at ipad width menu toggle icon */}
@@ -90,6 +96,9 @@ const Nav = () => {
       </nav>
       <div className="dropdownNav" style={{ top: position }}>
         <ul>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <li onClick={() => dispatch(navToggle("-1400px"))}>Home</li>
+          </Link>
           <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
             <li onClick={() => dispatch(navToggle("-1400px"))}>About</li>
           </Link>
@@ -99,11 +108,10 @@ const Nav = () => {
           >
             <li onClick={() => dispatch(navToggle("-1400px"))}>Journal</li>
           </Link>
-          <li>Images</li>
-          <li>Store</li>
-          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-            <li onClick={() => dispatch(navToggle("-1400px"))}>Home</li>
+          <Link to="/Images" style={{ textDecoration: "none", color: "black" }}>
+            <li onClick={() => dispatch(navToggle("-1400px"))}>Images</li>
           </Link>
+          <li>Store</li>
         </ul>
         <img
           alt=""

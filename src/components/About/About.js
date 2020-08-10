@@ -1,27 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./styles/style.css";
-var contentful = require("contentful");
+import Loading from "../Loading/Loading";
+import { getAbout } from "../../actions/index.js";
 
 const About = () => {
-  var client = contentful.createClient({
-    space: "dlipnuauv0sj",
-    accessToken: "wE7IZ7NvcSRJkr8slwMR5ZM6zEByjDgC7y1nEn36gx4",
-  });
-
-  let about = useSelector((state) => state.fetchAbout);
+  let about = useSelector((state) => state.fetchAbout.about);
   const dispatch = useDispatch();
 
-  if (about === '') {
-    client.getEntries({ content_type: "about" }).then((resp) =>
-      dispatch({
-        type: "REQUEST_ABOUT_SUCCESS",
-        payload: resp.items[0].fields.about,
-      })
-    );
-  }
+  useEffect(() => {
+    dispatch(getAbout());
+  }, [dispatch]);
 
-  return (
+  return about === "" ? (
+    <Loading />
+  ) : (
     <div className="about">
       <div>{about}</div>
     </div>

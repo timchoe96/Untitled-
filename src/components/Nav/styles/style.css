@@ -28,9 +28,9 @@ nav .leftNav {
           align-items: center;
 }
 
-nav .leftNav div {
-  font-weight: 800;
-  font-size: 18px;
+nav .leftNav img {
+  height: 16px;
+  width: auto;
   padding-right: 10px;
   padding-left: 18px;
 }

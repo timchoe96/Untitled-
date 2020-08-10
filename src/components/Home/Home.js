@@ -14,7 +14,9 @@ const Home = () => {
           <div>Journal</div>
         </div>
         <div className="imagesFolder">
-          <img alt="" src={doc}></img>
+          <Link to="/Images">
+            <img alt="" src={doc}></img>
+          </Link>
           <div>Images</div>
         </div>
       </div>
