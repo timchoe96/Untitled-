@@ -78,3 +78,17 @@ export const navToggle = (position) => {
     payload: position,
   };
 };
+
+export const searchToggle = (visible) => {
+  return {
+    type: "VISIBLE",
+    payload: visible,
+  };
+};
+
+export const searching = (search) => {
+  return {
+    type: "SEARCHING",
+    payload: search,
+  };
+};
