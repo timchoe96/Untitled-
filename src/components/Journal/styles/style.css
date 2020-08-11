@@ -1,8 +1,8 @@
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 50px 1fr;
-      grid-template-rows: 50px 1fr;
+  -ms-grid-rows: 80px 1fr;
+      grid-template-rows: 80px 1fr;
   overflow-y: hidden;
 }
 
@@ -13,14 +13,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
-  border-bottom: 0.5px solid #e1e1e1;
+  border-bottom: thin solid #e1e1e1;
   width: calc(100% - 100px);
   margin: 0 auto;
 }
 
 .grid .search img {
-  margin-left: auto;
   height: 20px;
   cursor: pointer;
   width: auto;
@@ -34,7 +36,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 80px;
   width: 100%;
   background: white;
   display: -webkit-box;
@@ -65,10 +67,6 @@
 
 .grid .search .searchBar input:focus {
   outline: 0;
-}
-
-.grid .search .searchBar img {
-  margin: 0;
 }
 
 .grid .search .searchBar .close {
@@ -109,7 +107,7 @@
 
 .grid .journal a .entryContainer .hover {
   font-weight: 200;
-  font-size: 14px;
+  font-size: 18px;
   -webkit-transition: opacity ease-in 0.2s;
   transition: opacity ease-in 0.2s;
   color: white;
@@ -133,20 +131,6 @@
   height: 100%;
   width: 100%;
   opacity: 0;
-}
-
-.grid .journal a .entryContainer .hover .title {
-  width: 80%;
-}
-
-.grid .journal a .entryContainer .hover .info {
-  width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .grid .journal a .entryContainer img {

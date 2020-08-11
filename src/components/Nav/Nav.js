@@ -74,7 +74,12 @@ const Nav = () => {
             >
               <li>Images</li>
             </Link>
-            <li>Store</li>
+            <Link
+              to="/Store"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <li>Store</li>
+            </Link>
           </ul>
         </div>
         {/* at ipad width menu toggle icon */}

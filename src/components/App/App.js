@@ -7,6 +7,7 @@ import Journal from "../Journal/Journal";
 import Entry from "../Entry/Entry";
 import About from "../About/About";
 import Images from "../Images/Images";
+import Store from "../Store/Store";
 import { getBlog } from "../../actions/index.js";
 import "./styles/style.css";
 
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/Journal" exact component={Journal} />
           <Route path="/Journal/:id" exact component={Entry} />
           <Route path="/Images" exact component={Images} />
+          <Route path="/Store" exact component={Store} />
         </Switch>
       </div>
     </Router>

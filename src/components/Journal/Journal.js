@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import search from "./images/search.svg";
 import close from "./images/close.png";
+import arrows from "./images/arrows.png";
 import { searchToggle } from "../../actions/index.js";
 import { searching } from "../../actions/index.js";
 import "./styles/style.css";
@@ -14,23 +15,35 @@ const Journal = () => {
   let opacity = useSelector((state) => state.search.opacity);
   let width = useSelector((state) => state.search.width);
   const dispatch = useDispatch();
-  // console.log(journal);
-  console.log(input);
+
+  const [reverse, setReverse] = useState(false);
+
+  let filteredEntries = () => {
+    return journal.filter((entry) =>
+      entry.title.toLowerCase().includes(input.toLowerCase())
+    );
+  };
 
   return journal.length === 0 ? (
     <Loading />
   ) : (
     <div className="grid">
       <div className="search">
+        <img className="searchIcon" src={search} alt=""></img>
         <img
-          onClick={() =>
-            dispatch(searchToggle({ opacity: "1", width: "100%" }))
-          }
-          src={search}
+          onClick={() => setReverse((prevValue) => !prevValue)}
+          src={arrows}
+          className="arrows"
           alt=""
         ></img>
         <div className="searchBar" style={{ opacity: opacity, width: width }}>
-          <img src={search} alt=""></img>
+          <img
+            onClick={() =>
+              dispatch(searchToggle({ opacity: "1", width: "100%" }))
+            }
+            src={search}
+            alt=""
+          ></img>
           <input
             onChange={(event) => dispatch(searching(event.target.value))}
             placeholder="Search for entry"
@@ -45,24 +58,26 @@ const Journal = () => {
         </div>
       </div>
       <div className="journal">
-        {journal.map((entry, i) => (
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            key={i}
-            to={`/Journal/${i}`}
-          >
-            <div className="entryContainer">
-              <img alt="" src={entry.images[0].url}></img>
-              <div className="hover">
-                <div className="title">{`Title: ${entry.title}`}</div>
-                <div className="info">
-                  <div>{`Entry: 000${journal.length - i}`}</div>
-                  <div>{`Posted: ${entry.published.slice(0, 10)}`}</div>
+        {(reverse ? filteredEntries().reverse() : filteredEntries()).map(
+          (entry, i) => (
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              key={i}
+              to={`/Journal/${i}`}
+            >
+              <div className="entryContainer">
+                <img alt="" src={entry.images[0].url}></img>
+                <div className="hover">
+                  <div className="title">{`Title: ${entry.title}`}</div>
+                  <div className="info">
+                    {/* <div>{`Entry: 000${journal.length - i}`}</div> */}
+                    <div>{`Posted: ${entry.published.slice(0, 10)}`}</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          )
+        )}
       </div>
     </div>
   );
