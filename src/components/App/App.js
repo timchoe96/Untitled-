@@ -13,7 +13,6 @@ import "./styles/style.css";
 
 const App = () => {
   const dispatch = useDispatch();
-  // let journal = useSelector((state) => state.fetchJournal);
 
   useEffect(() => {
     dispatch(getBlog());

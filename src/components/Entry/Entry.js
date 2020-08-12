@@ -7,9 +7,10 @@ const Entry = ({ match }) => {
   let journal = useSelector((state) => state.fetchJournal.journal);
 
   const id = match.params.id;
+  let entry = journal.filter((post) => post.id.includes(id));
   return (
     <div className="entry">
-      {journal.length !== 0 && parse(journal[id].content)}
+      {journal.length !== 0 && parse(entry[0].content)}
     </div>
   );
 };

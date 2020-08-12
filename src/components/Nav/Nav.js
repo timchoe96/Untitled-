@@ -116,7 +116,9 @@ const Nav = () => {
           <Link to="/Images" style={{ textDecoration: "none", color: "black" }}>
             <li onClick={() => dispatch(navToggle("-1400px"))}>Images</li>
           </Link>
-          <li>Store</li>
+          <Link to="/Store" style={{ textDecoration: "none", color: "black" }}>
+            <li onClick={() => dispatch(navToggle("-1400px"))}>Store</li>
+          </Link>
         </ul>
         <img
           alt=""
