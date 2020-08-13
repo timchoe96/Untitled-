@@ -9,8 +9,8 @@ import { searchToggle } from "../../actions/index.js";
 import { searching } from "../../actions/index.js";
 import "./styles/style.css";
 
-const Journal = () => {
-  let journal = useSelector((state) => state.fetchJournal.journal);
+const Documents = () => {
+  let documents = useSelector((state) => state.fetchDocuments.documents);
   let input = useSelector((state) => state.searching);
   let opacity = useSelector((state) => state.search.opacity);
   let width = useSelector((state) => state.search.width);
@@ -19,7 +19,7 @@ const Journal = () => {
   const [reverse, setReverse] = useState(false);
 
   let filteredEntries = () => {
-    return journal.filter((entry) =>
+    return documents.filter((entry) =>
       entry.title.toLowerCase().includes(input.toLowerCase())
     );
   };
@@ -27,8 +27,6 @@ const Journal = () => {
   useEffect(() => {
     dispatch(searching(""));
   }, [dispatch]);
-
-  console.log(journal);
 
   return (
     <div className="grid">
@@ -65,7 +63,7 @@ const Journal = () => {
           ></img>
         </div>
       </div>
-      {journal.length === 0 ? (
+      {documents.length === 0 ? (
         <Loading />
       ) : filteredEntries().length === 0 ? (
         <div id="noEntry">
@@ -78,16 +76,13 @@ const Journal = () => {
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 key={i}
-                to={`/Journal/${entry.id}`}
+                to={`/Documents/${entry.id}`}
               >
                 <div className="entryContainer">
                   <img alt="" src={entry.images[0].url}></img>
                   <div className="hover">
                     <div className="title">{`${entry.title}`}</div>
-                    <div className="info">
-                      {/* <div>{`Entry: 000${journal.length - i}`}</div> */}
-                      <div>{`${entry.published.slice(0, 10)}`}</div>
-                    </div>
+                    <div>{`${entry.published.slice(0, 10)}`}</div>
                   </div>
                 </div>
               </Link>
@@ -99,4 +94,4 @@ const Journal = () => {
   );
 };
 
-export default Journal;
+export default Documents;

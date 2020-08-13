@@ -1,7 +1,7 @@
 import time from "./time.js";
 import position from "./position.js";
 import fetchAbout from "./fetchAbout.js";
-import fetchJournal from "./fetchJournal.js";
+import fetchDocuments from "./fetchDocuments.js";
 import fetchImages from "./fetchImages.js";
 import { combineReducers } from "redux";
 import search from "./search.js";
@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   time,
   position,
   fetchAbout,
-  fetchJournal,
+  fetchDocuments,
   fetchImages,
   search,
   searching,

@@ -4,13 +4,13 @@ import parse from "html-react-parser";
 import "./styles/styles.css";
 
 const Entry = ({ match }) => {
-  let journal = useSelector((state) => state.fetchJournal.journal);
+  let documents = useSelector((state) => state.fetchDocuments.documents);
 
   const id = match.params.id;
-  let entry = journal.filter((post) => post.id.includes(id));
+  let entry = documents.filter((post) => post.id.includes(id));
   return (
     <div className="entry">
-      {journal.length !== 0 && parse(entry[0].content)}
+      {documents.length !== 0 && parse(entry[0].content)}
     </div>
   );
 };

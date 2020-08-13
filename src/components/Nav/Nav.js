@@ -63,10 +63,10 @@ const Nav = () => {
               <li>About</li>
             </Link>
             <Link
-              to="/Journal"
+              to="/Documents"
               style={{ textDecoration: "none", color: "black" }}
             >
-              <li>Journal</li>
+              <li>Documents</li>
             </Link>
             <Link
               to="/Images"
@@ -108,10 +108,10 @@ const Nav = () => {
             <li onClick={() => dispatch(navToggle("-1400px"))}>About</li>
           </Link>
           <Link
-            to="/Journal"
+            to="/Documents"
             style={{ textDecoration: "none", color: "black" }}
           >
-            <li onClick={() => dispatch(navToggle("-1400px"))}>Journal</li>
+            <li onClick={() => dispatch(navToggle("-1400px"))}>Documents</li>
           </Link>
           <Link to="/Images" style={{ textDecoration: "none", color: "black" }}>
             <li onClick={() => dispatch(navToggle("-1400px"))}>Images</li>
