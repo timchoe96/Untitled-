@@ -15,10 +15,12 @@ const Images = () => {
   return feed.length === 0 ? (
     <Loading />
   ) : (
-    <div className="images">
-      {feed.map((image, i) => (
-        <img key={i} src={image.link_url} alt=""></img>
-      ))}
+    <div className="imageContainer">
+      <div className="images">
+        {feed.map((image, i) => (
+          <img key={i} src={image.link_url} alt=""></img>
+        ))}
+      </div>
     </div>
   );
 };

@@ -21,19 +21,19 @@ export const getAbout = () => (dispatch) => {
 };
 
 export const getBlog = () => (dispatch) => {
-  dispatch({ type: "REQUEST_DOCUMENTS_PENDING" });
+  dispatch({ type: "REQUEST_BLOG_PENDING" });
   fetch(
     `https://www.googleapis.com/blogger/v3/blogs/9085604028025620950/posts?key=AIzaSyChWrKyLjsVyYj42CKBstkjrOnKWwPLqDs&fetchImages=true&maxResults=500`
   )
     .then((resp) => resp.json())
     .then((data) =>
       dispatch({
-        type: "REQUEST_DOCUMENTS_SUCCESS",
+        type: "REQUEST_BLOG_SUCCESS",
         payload: data.items,
       })
     )
     .catch((error) =>
-      dispatch({ type: "REQUEST_DOCUMENTS_FAILED", payload: error })
+      dispatch({ type: "REQUEST_BLOG_FAILED", payload: error })
     );
 };
 

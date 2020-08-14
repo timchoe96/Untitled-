@@ -1,11 +1,82 @@
-.entry {
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  font-weight: 200;
-  padding: 0 10%;
-  line-height: 1.5;
-  font-size: 1rem;
-  padding-top: 50px;
+.entryBox {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  overflow-y: hidden;
+  .back {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: thin solid rgb(225, 225, 225);
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    img {
+      height: 20px;
+      width: auto;
+    }
+  }
+  .entryScroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    .entry {
+      height: 100%;
+      width: 100%;
+      font-weight: 200;
+      padding: 0 200px;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .entryBox {
+    .entryScroll {
+      .entry {
+        padding: 0 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .entryBox {
+    .entryScroll {
+      .entry {
+        padding: 0 50px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .entryBox {
+    .back {
+      width: 300px;
+    }
+    .entryScroll {
+      .entry {
+        padding: 0 calc((100vw - 300px) / 2);
+        span {
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .entryBox {
+    .back {
+      width: 250px;
+    }
+    .entryScroll {
+      .entry {
+        padding: 0 calc((100vw - 250px) / 2);
+        span {
+          font-size: small;
+        }
+      }
+    }
+  }
 }

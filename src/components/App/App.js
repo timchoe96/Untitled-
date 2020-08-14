@@ -3,7 +3,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Nav from "../Nav/Nav";
 import Home from "../Home/Home";
-import Documents from "../Documents/Documents";
+import Blog from "../Blog/Blog";
 import Entry from "../Entry/Entry";
 import About from "../About/About";
 import Images from "../Images/Images";
@@ -25,8 +25,8 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/About" exact component={About} />
-          <Route path="/Documents" exact component={Documents} />
-          <Route path="/Documents/:id" exact component={Entry} />
+          <Route path="/Blog" exact component={Blog} />
+          <Route path="/Blog/:id" exact component={Entry} />
           <Route path="/Images" exact component={Images} />
           <Route path="/Store" exact component={Store} />
         </Switch>

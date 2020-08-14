@@ -8,10 +8,10 @@ const Home = () => {
     <div className="home">
       <div className="folderContainer">
         <div className="journalFolder">
-          <Link to="/Documents">
+          <Link to="/Blog">
             <img alt="" src={doc}></img>
           </Link>
-          <div>Documents</div>
+          <div>Blog</div>
         </div>
         <div className="imagesFolder">
           <Link to="/Images">

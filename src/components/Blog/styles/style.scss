@@ -1,0 +1,151 @@
+.grid {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  overflow-y: hidden;
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: thin solid rgb(225, 225, 225);
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    img {
+      height: 20px;
+      cursor: pointer;
+      width: auto;
+      &:focus {
+        outline: 0;
+      }
+    }
+    .searchBar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 80px;
+      width: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      border-bottom: thin solid black;
+      transition: all ease-out 0.3s;
+      input {
+        margin: auto 0;
+        width: 95%;
+        height: 40px;
+        margin-left: 20px;
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 200;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        &:placholder {
+          font-weight: 200;
+        }
+        &:focus {
+          outline: 0;
+        }
+      }
+      .close {
+        margin-left: auto;
+      }
+    }
+  }
+  .blog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, 200px);
+    overflow-y: scroll;
+    padding: 50px;
+    grid-gap: 50px;
+    justify-content: center;
+    a {
+      &:last-child {
+        margin-bottom: 50px;
+        .title {
+          margin-top: 10px;
+        }
+      }
+      .entryContainer {
+        position: relative;
+        height: 200px;
+        &:hover .hover {
+          opacity: 1;
+        }
+        .hover {
+          font-weight: 400;
+          font-size: 18px;
+          transition: opacity ease-in 0.2s;
+          color: white;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          text-align: center;
+          align-items: center;
+          background: rgba(0, 0, 0, 0.7);
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          .title {
+            width: 80%;
+            line-height: 1.5;
+          }
+        }
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+#noEntry {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 200;
+}
+
+@media only screen and (max-width: 749px) {
+  .grid {
+    .blog {
+      grid-template-rows: repeat(auto-fill, 300px);
+      a {
+        .entryContainer {
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .grid {
+    .search {
+      width: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .grid {
+    .search {
+      width: 250px;
+    }
+    .blog {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-rows: repeat(auto-fill, 250px);
+      a {
+        .entryContainer {
+          height: 250px;
+        }
+      }
+    }
+  }
+}

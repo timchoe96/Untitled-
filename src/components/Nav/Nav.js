@@ -62,11 +62,8 @@ const Nav = () => {
             >
               <li>About</li>
             </Link>
-            <Link
-              to="/Documents"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <li>Documents</li>
+            <Link to="/Blog" style={{ textDecoration: "none", color: "black" }}>
+              <li>Blog</li>
             </Link>
             <Link
               to="/Images"
@@ -107,11 +104,8 @@ const Nav = () => {
           <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
             <li onClick={() => dispatch(navToggle("-1400px"))}>About</li>
           </Link>
-          <Link
-            to="/Documents"
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <li onClick={() => dispatch(navToggle("-1400px"))}>Documents</li>
+          <Link to="/Blog" style={{ textDecoration: "none", color: "black" }}>
+            <li onClick={() => dispatch(navToggle("-1400px"))}>Blog</li>
           </Link>
           <Link to="/Images" style={{ textDecoration: "none", color: "black" }}>
             <li onClick={() => dispatch(navToggle("-1400px"))}>Images</li>
