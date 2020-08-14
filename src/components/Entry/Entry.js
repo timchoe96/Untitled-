@@ -20,6 +20,7 @@ const Entry = ({ match }) => {
       <div className="entryScroll">
         <div className="entry">
           {blog.length !== 0 && parse(entry[0].content)}
+          <div style={{ height: "50px" }}></div>
         </div>
       </div>
     </div>

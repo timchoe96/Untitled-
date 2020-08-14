@@ -56,14 +56,12 @@
     grid-template-rows: repeat(auto-fill, 200px);
     overflow-y: scroll;
     padding: 50px;
+    padding-bottom: 0px;
     grid-gap: 50px;
     justify-content: center;
     a {
       &:last-child {
         margin-bottom: 50px;
-        .title {
-          margin-top: 10px;
-        }
       }
       .entryContainer {
         position: relative;

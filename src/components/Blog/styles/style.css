@@ -82,6 +82,7 @@
       grid-template-rows: repeat(auto-fill, 200px);
   overflow-y: scroll;
   padding: 50px;
+  padding-bottom: 0px;
   grid-gap: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -90,10 +91,6 @@
 
 .grid .blog a:last-child {
   margin-bottom: 50px;
-}
-
-.grid .blog a:last-child .title {
-  margin-top: 10px;
 }
 
 .grid .blog a .entryContainer {
