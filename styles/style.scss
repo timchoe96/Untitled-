@@ -5,15 +5,13 @@
 }
 html {
   height: 100%;
-  overflow: hidden;
-  position: relative;
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    overflow: hidden;
     height: 100%;
   }
 }
 
 #root {
   height: 100%;
+  overflow: hidden;
 }
