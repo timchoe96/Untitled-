@@ -8,11 +8,33 @@ import Entry from "../Entry/Entry";
 import About from "../About/About";
 import Images from "../Images/Images";
 import Store from "../Store/Store";
+import Landscape from "../Landscape/Landscape";
 import { getBlog } from "../../actions/index.js";
+// import _ from "lodash";
 import "./styles/style.css";
 
 const App = () => {
   const dispatch = useDispatch();
+
+  const adjust = () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
+  setInterval(adjust, 100);
+
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+  // window.addEventListener("resize", function () {
+  //   if (window.matchMedia("(orientation: landscape)").matches) {
+  //     document.getElementsByTagName("html")[0].style.height = `${vh * 100}px`;
+  //     console.log("hello");
+  //     setTimeout(function () {
+  //       document.getElementsByTagName("html")[0].style.height = `${vh * 100}px`;
+  //     }, 500);
+  //   }
+  // });
 
   useEffect(() => {
     dispatch(getBlog());
@@ -21,6 +43,7 @@ const App = () => {
   return (
     <Router>
       <div className="gridContainer">
+        <Landscape />
         <Nav />
         <Switch>
           <Route path="/" exact component={Home} />

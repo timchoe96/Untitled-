@@ -1,7 +1,6 @@
 .grid {
   display: grid;
   grid-template-rows: 80px 1fr;
-  overflow-y: hidden;
   .search {
     display: flex;
     align-items: center;
@@ -54,7 +53,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fill, 200px);
-    overflow-y: scroll;
+    overflow: scroll;
+    height: calc((var(--vh, 1vh) * 100) - 105px);
     padding: 50px;
     padding-bottom: 0px;
     grid-gap: 50px;
@@ -117,6 +117,9 @@
       a {
         .entryContainer {
           height: 300px;
+          .hover {
+            display: none;
+          }
         }
       }
     }

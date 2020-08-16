@@ -1,12 +1,7 @@
-.imageContainer {
-  overflow: hidden;
-}
-
 .imageContainer .images {
-  height: 100%;
+  height: calc((var(--vh, 1vh) * 100) - 25px);
   width: 100%;
   overflow-y: scroll;
-  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,6 +22,12 @@
   max-height: 400px;
   margin-bottom: 25px;
   margin-top: 25px;
+}
+
+@media only screen and (max-width: 400px) {
+  .imageContainer .images img {
+    max-width: 300px;
+  }
 }
 
 @media only screen and (max-width: 350px) {

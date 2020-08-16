@@ -5,7 +5,6 @@ nav {
   cursor: default;
   background-color: $navColor;
   border-bottom: 1px solid rgb(225, 225, 225);
-  // box-shadow: 0 3px 50px -6px rgb(53, 53, 53);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,6 +61,7 @@ nav {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background-color: $navColor;
   text-align: center;
   transition: top ease-out 0.5s;

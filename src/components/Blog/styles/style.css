@@ -3,7 +3,6 @@
   display: grid;
   -ms-grid-rows: 80px 1fr;
       grid-template-rows: 80px 1fr;
-  overflow-y: hidden;
 }
 
 .grid .search {
@@ -80,7 +79,8 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   -ms-grid-rows: (200px)[auto-fill];
       grid-template-rows: repeat(auto-fill, 200px);
-  overflow-y: scroll;
+  overflow: scroll;
+  height: calc((var(--vh, 1vh) * 100) - 105px);
   padding: 50px;
   padding-bottom: 0px;
   grid-gap: 50px;
@@ -165,6 +165,9 @@
   }
   .grid .blog a .entryContainer {
     height: 300px;
+  }
+  .grid .blog a .entryContainer .hover {
+    display: none;
   }
 }
 

@@ -1,0 +1,26 @@
+.landscape {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 100;
+  background: white;
+  font-weight: 200;
+}
+
+@media all and (orientation: landscape) and (max-width: 812px) and (max-height: 450px) {
+  .landscape {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=style.css.map */
