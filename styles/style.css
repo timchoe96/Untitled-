@@ -5,7 +5,11 @@
           box-sizing: border-box;
 }
 
-body {
+html {
+  overflow: hidden;
+}
+
+html body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /*# sourceMappingURL=style.css.map */

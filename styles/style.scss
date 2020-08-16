@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+html {
+  overflow: hidden;
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 }
