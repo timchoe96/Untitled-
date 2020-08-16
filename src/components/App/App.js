@@ -10,7 +10,6 @@ import Images from "../Images/Images";
 import Store from "../Store/Store";
 import Landscape from "../Landscape/Landscape";
 import { getBlog } from "../../actions/index.js";
-// import _ from "lodash";
 import "./styles/style.css";
 
 const App = () => {
@@ -25,16 +24,6 @@ const App = () => {
 
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-  // window.addEventListener("resize", function () {
-  //   if (window.matchMedia("(orientation: landscape)").matches) {
-  //     document.getElementsByTagName("html")[0].style.height = `${vh * 100}px`;
-  //     console.log("hello");
-  //     setTimeout(function () {
-  //       document.getElementsByTagName("html")[0].style.height = `${vh * 100}px`;
-  //     }, 500);
-  //   }
-  // });
 
   useEffect(() => {
     dispatch(getBlog());
