@@ -59,7 +59,7 @@ Images:
 
 Mobile responsive:
 
-![](images/mobile.png){:height="auto" width="300"}
+![](images/mobile.png =250x)
 
 Mobile responsive navigation dropdown: 
 
