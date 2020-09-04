@@ -59,7 +59,7 @@ Images:
 
 Mobile responsive:
 
-![](images/mobile.png =250x)
+![](images/mobile.png)
 
 Mobile responsive navigation dropdown: 
 
