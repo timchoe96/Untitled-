@@ -46,3 +46,5 @@ The store is not available yet until products are decided on.
 # Website Images
 
 Homepage:
+
+![](images/Home.png)
