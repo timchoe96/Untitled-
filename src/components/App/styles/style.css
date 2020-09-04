@@ -1,9 +1,15 @@
 .gridContainer {
   height: 100%;
   width: 100vw;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 25px 1fr;
-      grid-template-rows: 25px 1fr;
+}
+
+.nothing {
+  position: fixed;
+  top: 0;
+  height: 10%;
+  width: 100%;
+  z-index: 40;
+  background: none;
+  pointer-events: none;
 }
 /*# sourceMappingURL=style.css.map */

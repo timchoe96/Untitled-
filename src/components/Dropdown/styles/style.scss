@@ -1,0 +1,64 @@
+$navColor: rgb(237, 237, 237);
+
+.dropdownNav {
+  pointer-events: auto;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  font-weight: 200;
+  font-size: 18px;
+  z-index: 50;
+  position: absolute;
+  width: 100vw;
+  height: calc(100% * 10);
+  background-color: $navColor;
+  top: 0;
+  text-align: center;
+  transition: top ease-out 0.3s;
+  ul {
+    list-style: none;
+    li {
+      margin: 50px 0 50px;
+    }
+  }
+  img {
+    margin-bottom: 50px;
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .dropdownNav {
+    display: flex;
+  }
+}
+
+@media only screen and (max-height: 450px) {
+  .dropdownNav {
+    font-size: 16px;
+    ul {
+      li {
+        margin: 30px 0 30px;
+      }
+    }
+    img {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media only screen and (max-height: 300px) {
+  .dropdownNav {
+    ul {
+      li {
+        margin: 20px 0 20px;
+      }
+    }
+    img {
+      margin-bottom: 20px;
+    }
+  }
+}

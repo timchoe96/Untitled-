@@ -1,12 +1,9 @@
 .entryBox {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 80px 1fr;
-      grid-template-rows: 80px 1fr;
-  overflow-y: hidden;
+  height: 100%;
 }
 
 .entryBox .back {
+  font-weight: 200;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,10 +13,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: relative;
+  position: fixed;
+  top: 25px;
+  left: 50px;
+  height: 80px;
   border-bottom: thin solid #e1e1e1;
   width: calc(100% - 100px);
   margin: 0 auto;
+  background-color: white;
 }
 
 .entryBox .back img {
@@ -27,12 +28,8 @@
   width: auto;
 }
 
-.entryBox .entryScroll {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
 .entryBox .entryScroll .entry {
+  margin-top: 105px;
   height: 100%;
   width: 100%;
   font-weight: 200;
@@ -56,6 +53,7 @@
 @media only screen and (max-width: 400px) {
   .entryBox .back {
     width: 300px;
+    left: calc((100% - 300px) / 2);
   }
   .entryBox .entryScroll .entry {
     padding: 0 calc((100vw - 300px) / 2);
@@ -68,6 +66,7 @@
 @media only screen and (max-width: 350px) {
   .entryBox .back {
     width: 250px;
+    left: calc((100% - 250px) / 2);
   }
   .entryBox .entryScroll .entry {
     padding: 0 calc((100vw - 250px) / 2);

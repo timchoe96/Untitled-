@@ -1,4 +1,4 @@
-const position = (state = "-1400px", action) => {
+const position = (state = "-2000px", action) => {
   switch (action.type) {
     case "POSITION":
       return action.payload;

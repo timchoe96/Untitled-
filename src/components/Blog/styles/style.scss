@@ -1,14 +1,20 @@
-.grid {
-  display: grid;
-  grid-template-rows: 80px 1fr;
+.searchContainer {
+  width: 100vw;
+  background: white;
+  height: 80px;
+  position: fixed;
+  z-index: 2;
+  top: 25px;
   .search {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
     border-bottom: thin solid rgb(225, 225, 225);
     width: calc(100% - 100px);
     margin: 0 auto;
+    height: 80px;
+    background-color: white;
+    position: relative;
     img {
       height: 20px;
       cursor: pointer;
@@ -19,11 +25,11 @@
     }
     .searchBar {
       position: absolute;
+      background-color: white;
       top: 0;
       left: 0;
       height: 80px;
       width: 100%;
-      background: white;
       display: flex;
       align-items: center;
       border-bottom: thin solid black;
@@ -49,104 +55,104 @@
       }
     }
   }
-  .blog {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fill, 200px);
-    overflow: scroll;
-    height: calc((var(--vh, 1vh) * 100) - 105px);
-    padding: 50px;
-    padding-bottom: 0px;
-    grid-gap: 50px;
-    justify-content: center;
-    a {
-      &:last-child {
-        margin-bottom: 50px;
+}
+.blog {
+  margin-top: 155px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, 200px);
+  overflow: scroll;
+  padding: 0 50px;
+  padding-bottom: 50px;
+  grid-gap: 50px;
+  position: relative;
+  justify-content: center;
+  .entryContainer {
+    position: relative;
+    height: 200px;
+    &:hover .hover {
+      opacity: 1;
+    }
+    .hover {
+      font-weight: 400;
+      font-size: 50px;
+      transition: opacity ease-in 0.2s;
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      text-align: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      .title {
+        width: 80%;
+        line-height: 1.5;
       }
-      .entryContainer {
-        position: relative;
-        height: 200px;
-        &:hover .hover {
-          opacity: 1;
-        }
-        .hover {
-          font-weight: 400;
-          font-size: 18px;
-          transition: opacity ease-in 0.2s;
-          color: white;
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          text-align: center;
-          align-items: center;
-          background: rgba(0, 0, 0, 0.7);
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-          .title {
-            width: 80%;
-            line-height: 1.5;
-          }
-        }
-        img {
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
-        }
-      }
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
   }
 }
 
 #noEntry {
-  height: 100%;
+  height: calc(100% * 2);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 200;
+  text-align: center;
+  line-height: 2;
 }
 
 @media only screen and (max-width: 749px) {
-  .grid {
-    .blog {
-      grid-template-rows: repeat(auto-fill, 300px);
-      a {
-        .entryContainer {
-          height: 300px;
-          .hover {
-            display: none;
-          }
-        }
+  .blog {
+    grid-template-rows: repeat(auto-fill, 300px);
+
+    .entryContainer {
+      height: 300px;
+      .hover {
+        display: none;
       }
     }
   }
 }
 
 @media only screen and (max-width: 400px) {
-  .grid {
+  .searchContainer {
     .search {
       width: 300px;
     }
   }
+  #noEntry {
+    padding: 0 calc((100vw - 300px) / 2);
+  }
 }
 
 @media only screen and (max-width: 350px) {
-  .grid {
+  .searchContainer {
     .search {
       width: 250px;
     }
-    .blog {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-template-rows: repeat(auto-fill, 250px);
-      a {
-        .entryContainer {
-          height: 250px;
-        }
-      }
+  }
+  .blog {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, 250px);
+
+    .entryContainer {
+      height: 250px;
     }
+  }
+  #noEntry {
+    padding: 0 calc((100vw - 250px) / 2);
   }
 }

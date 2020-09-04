@@ -10,12 +10,14 @@ const Entry = ({ match }) => {
 
   const id = match.params.id;
   let entry = blog.filter((post) => post.id.includes(id));
+  console.log(entry[0]);
   return (
     <div className="entryBox">
       <div className="back">
         <Link to="/Blog">
           <img src={arrow} alt=""></img>
         </Link>
+        <div>{blog.length !== 0 && `${entry[0].published.slice(0, 10)}`}</div>
       </div>
       <div className="entryScroll">
         <div className="entry">

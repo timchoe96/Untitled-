@@ -5,14 +5,13 @@ import { timeChange } from "../../actions/index.js";
 import battery from "./images/battery.png";
 import wifi from "./images/wifi.png";
 import menu from "./images/menu.png";
-import close from "./images/close.png";
 import favicon from "./images/favicon.png";
 import { navToggle } from "../../actions/index.js";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
   const dispatch = useDispatch();
-  const position = useSelector((state) => state.position);
+
   const time = useSelector((state) => state.time);
   let macTime;
 
@@ -30,6 +29,10 @@ const Nav = () => {
     function realHours() {
       if (hours === 0) {
         return "12";
+      } else if (hours === -1) {
+        return "11";
+      } else if (hours === -2) {
+        return "10";
       } else {
         return hours;
       }
@@ -46,11 +49,15 @@ const Nav = () => {
     }, 500);
   });
 
+  const clickOpen = () => {
+    dispatch(navToggle("0"));
+    document.getElementsByTagName("html")[0].style.overflow = "hidden";
+  };
+
   return (
     <div>
       <nav>
         <div className="leftNav">
-          {/* <img src={apple} alt=""></img> */}
           <img src={favicon} alt=""></img>
           <ul>
             <Link to="/" style={{ textDecoration: "none", color: "black" }}>
@@ -63,7 +70,7 @@ const Nav = () => {
               <li>About</li>
             </Link>
             <Link to="/Blog" style={{ textDecoration: "none", color: "black" }}>
-              <li>Blog</li>
+              <li>Docs</li>
             </Link>
             <Link
               to="/Images"
@@ -81,7 +88,7 @@ const Nav = () => {
         </div>
         {/* at ipad width menu toggle icon */}
         <img
-          onClick={() => dispatch(navToggle("0"))}
+          onClick={() => clickOpen()}
           className="menuToggle"
           src={menu}
           alt=""
@@ -96,30 +103,6 @@ const Nav = () => {
           <div> {time}</div>
         </div>
       </nav>
-      <div className="dropdownNav" style={{ top: position }}>
-        <ul>
-          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-            <li onClick={() => dispatch(navToggle("-1400px"))}>Home</li>
-          </Link>
-          <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
-            <li onClick={() => dispatch(navToggle("-1400px"))}>About</li>
-          </Link>
-          <Link to="/Blog" style={{ textDecoration: "none", color: "black" }}>
-            <li onClick={() => dispatch(navToggle("-1400px"))}>Blog</li>
-          </Link>
-          <Link to="/Images" style={{ textDecoration: "none", color: "black" }}>
-            <li onClick={() => dispatch(navToggle("-1400px"))}>Images</li>
-          </Link>
-          <Link to="/Store" style={{ textDecoration: "none", color: "black" }}>
-            <li onClick={() => dispatch(navToggle("-1400px"))}>Store</li>
-          </Link>
-        </ul>
-        <img
-          alt=""
-          src={close}
-          onClick={() => dispatch(navToggle("-1400px"))}
-        ></img>
-      </div>
     </div>
   );
 };

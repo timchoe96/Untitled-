@@ -40,14 +40,14 @@ export const getBlog = () => (dispatch) => {
 export const getImages = () => (dispatch) => {
   dispatch({ type: "REQUUEST_IMAGES_PENDING" });
   fetch(
-    `https://api.tumblr.com/v2/blog/t:ludyybtv8EyHxeJzIanq3w/info?api_key=1K5kBBtN3I6XMgfAB6qU4kQieFrKuz2abpFw21YxeauKQcUW2s`
+    `https://cors-anywhere.herokuapp.com/api.tumblr.com/v2/blog/t:ludyybtv8EyHxeJzIanq3w/info?api_key=1K5kBBtN3I6XMgfAB6qU4kQieFrKuz2abpFw21YxeauKQcUW2s`
   )
     .then((res) => res.json())
     .then((data) => Math.ceil(data.response.blog.posts / 50))
     .then((number) => {
       for (let i = 0; i < number; i++) {
         fetch(
-          `https://api.tumblr.com/v2/blog/t:ludyybtv8EyHxeJzIanq3w/posts?api_key=1K5kBBtN3I6XMgfAB6qU4kQieFrKuz2abpFw21YxeauKQcUW2s&limit=50&offset=${
+          `https://cors-anywhere.herokuapp.com/api.tumblr.com/v2/blog/t:ludyybtv8EyHxeJzIanq3w/posts?api_key=1K5kBBtN3I6XMgfAB6qU4kQieFrKuz2abpFw21YxeauKQcUW2s&limit=50&offset=${
             i * 50
           }`
         )

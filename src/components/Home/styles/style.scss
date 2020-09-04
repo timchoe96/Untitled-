@@ -1,8 +1,12 @@
 .home {
+  background: url(../images/forest.png) no-repeat center center fixed;
+  background-size: cover;
   font-size: 12px;
-  height: 100%;
+  height: calc(100% * 2);
   width: 100%;
   position: relative;
+  color: white;
+  text-shadow: 1px 1px 2px black;
   img {
     height: 3rem;
     width: auto;
@@ -11,7 +15,7 @@
   .folderContainer {
     position: absolute;
     right: 2rem;
-    top: 2rem;
+    top: 4rem;
     text-align: center;
     .journalFolder {
       margin-bottom: 2rem;

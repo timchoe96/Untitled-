@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Nav from "../Nav/Nav";
 import Home from "../Home/Home";
@@ -8,22 +8,12 @@ import Entry from "../Entry/Entry";
 import About from "../About/About";
 import Images from "../Images/Images";
 import Store from "../Store/Store";
-import Landscape from "../Landscape/Landscape";
+import Dropdown from "../Dropdown/Dropdown";
 import { getBlog } from "../../actions/index.js";
 import "./styles/style.css";
 
 const App = () => {
   const dispatch = useDispatch();
-
-  const adjust = () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  };
-
-  setInterval(adjust, 100);
-
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
 
   useEffect(() => {
     dispatch(getBlog());
@@ -31,18 +21,18 @@ const App = () => {
 
   return (
     <Router>
-      <div className="gridContainer">
-        <Landscape />
-        <Nav />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/About" exact component={About} />
-          <Route path="/Blog" exact component={Blog} />
-          <Route path="/Blog/:id" exact component={Entry} />
-          <Route path="/Images" exact component={Images} />
-          <Route path="/Store" exact component={Store} />
-        </Switch>
+      <Nav />
+      <div className="nothing">
+        <Dropdown />
       </div>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/About" exact component={About} />
+        <Route path="/Blog" exact component={Blog} />
+        <Route path="/Blog/:id" exact component={Entry} />
+        <Route path="/Images" exact component={Images} />
+        <Route path="/Store" exact component={Store} />
+      </Switch>
     </Router>
   );
 };

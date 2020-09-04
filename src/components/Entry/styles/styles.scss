@@ -1,24 +1,26 @@
 .entryBox {
-  display: grid;
-  grid-template-rows: 80px 1fr;
-  overflow-y: hidden;
+  height: 100%;
   .back {
+    font-weight: 200;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: fixed;
+    top: 25px;
+    left: 50px;
+    height: 80px;
     border-bottom: thin solid rgb(225, 225, 225);
     width: calc(100% - 100px);
     margin: 0 auto;
+    background-color: white;
     img {
       height: 20px;
       width: auto;
     }
   }
   .entryScroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
     .entry {
+      margin-top: 105px;
       height: 100%;
       width: 100%;
       font-weight: 200;
@@ -53,6 +55,7 @@
   .entryBox {
     .back {
       width: 300px;
+      left: calc((100% - 300px) / 2);
     }
     .entryScroll {
       .entry {
@@ -69,6 +72,7 @@
   .entryBox {
     .back {
       width: 250px;
+      left: calc((100% - 250px) / 2);
     }
     .entryScroll {
       .entry {

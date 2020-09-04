@@ -1,5 +1,5 @@
 .about {
-  height: 100%;
+  height: calc(100% + 100%);
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

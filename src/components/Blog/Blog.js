@@ -29,38 +29,44 @@ const Blog = () => {
   }, [dispatch]);
 
   return (
-    <div className="grid">
-      <div className="search">
-        <img className="searchIcon" src={search} alt=""></img>
-        <img
-          title="Reverse entry order"
-          onClick={() => setReverse((prevValue) => !prevValue)}
-          src={arrows}
-          className="arrows"
-          alt=""
-        ></img>
-        <div className="searchBar" style={{ opacity: opacity, width: width }}>
+    <div style={{ height: "100%" }}>
+      <div className="searchContainer">
+        <div className="search">
+          <img className="searchIcon" src={search} alt=""></img>
           <img
-            onClick={() =>
-              dispatch(searchToggle({ opacity: "1", width: "100%" }))
-            }
-            title="Search for entry"
-            src={search}
+            title="Reverse entry order"
+            onClick={() => setReverse((prevValue) => !prevValue)}
+            src={arrows}
+            className="arrows"
             alt=""
           ></img>
-          <input
-            value={input}
-            onChange={(event) => dispatch(searching(event.target.value))}
-            placeholder="Search for entry"
-            type="text"
-          ></input>
-          <img
-            title="Close search bar"
-            onClick={() => dispatch(searchToggle({ opacity: "0", width: "0" }))}
-            className="close"
-            src={close}
-            alt=""
-          ></img>
+          {/* searchbar on top  */}
+
+          <div className="searchBar" style={{ opacity: opacity, width: width }}>
+            <img
+              onClick={() =>
+                dispatch(searchToggle({ opacity: "1", width: "100%" }))
+              }
+              title="Search for entry"
+              src={search}
+              alt=""
+            ></img>
+            <input
+              value={input}
+              onChange={(event) => dispatch(searching(event.target.value))}
+              placeholder="Search for entry"
+              type="text"
+            ></input>
+            <img
+              title="Close search bar"
+              onClick={() =>
+                dispatch(searchToggle({ opacity: "0", width: "0" }))
+              }
+              className="close"
+              src={close}
+              alt=""
+            ></img>
+          </div>
         </div>
       </div>
       {blog.length === 0 ? (
@@ -81,8 +87,7 @@ const Blog = () => {
                 <div className="entryContainer">
                   <img alt="" src={entry.images[0].url}></img>
                   <div className="hover">
-                    <div className="title">{`${entry.title}`}</div>
-                    <div>{`${entry.published.slice(0, 10)}`}</div>
+                    <div className="title">{`${entry.title.toUpperCase()}`}</div>
                   </div>
                 </div>
               </Link>
