@@ -57,10 +57,3 @@ Images:
 
 ![](images/images.png)
 
-Mobile responsive:
-
-![](images/mobileBlog.png)
-
-Mobile responsive navigation dropdown: 
-
-![](images/mobileMenu.png)
