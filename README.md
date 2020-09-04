@@ -63,4 +63,4 @@ Mobile responsive:
 
 Mobile responsive navigation dropdown: 
 
-![](images/mobileNav.png)
+![](images/mobileMenu.png)
