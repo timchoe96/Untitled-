@@ -48,3 +48,19 @@ The store is not available yet until products are decided on.
 Homepage:
 
 ![](images/Home.png)
+
+Blog: 
+
+![](images/blog.png)
+
+Images: 
+
+![](images/images.png)
+
+Mobile responsive:
+
+![](images/mobile.png)
+
+Mobile responsive navigation dropdown: 
+
+![](images/nav.png)
