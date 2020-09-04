@@ -59,8 +59,8 @@ Images:
 
 Mobile responsive:
 
-![](images/mobile.png)
+![](images/mobileBlog.png)
 
 Mobile responsive navigation dropdown: 
 
-![](images/nav.png)
+![](images/mobileNav.png)
